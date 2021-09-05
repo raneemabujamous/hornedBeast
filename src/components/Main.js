@@ -18,7 +18,7 @@ class Main extends Component {
             <>
                 {
                     aniaml.map(elements => {
-                        return <HornedBeast titelanimal={elements.titelAnimal} img={elements.img} discription={elements.discription} />
+                        return <HornedBeast titelAnimal={elements.titelAnimal} img={elements.img} discription={elements.discription} />
                     })
                 }
             </>
