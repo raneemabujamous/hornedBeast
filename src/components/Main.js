@@ -1,38 +1,36 @@
 import React, { Component } from 'react'
 import HornedBeast from './HornedBeast'
 import data from './data.json'
+import Col from 'react-bootstrap/Col';
+import { Container, Row } from 'react-bootstrap';
+
 class Main extends Component {
-    constructor(props){
-        super(props);
-      this.state={
-            numlikes:this.props.numlikes,
-        }
-    }
-    raiselikes=()=>{
-        this.setState({
-            numlikes:this.state.numlikes+1
-        })
-    }
+
     render() {
-       
+
         return (
             <>
 
+                <Container>
+                    <Row>
+                    {
 
-                {
+                        data.map(elements => {
+                            return <Col>
+                            
+                                <HornedBeast handleOpen={this.props.handleOpen} title={elements.title}
+                                    image_url={elements.image_url} discription={elements.description}
+                                    keyword={elements.keyword} horns={elements.horns} raiselikes={this.props.numlikes} />
+                            </Col>
+                        })
 
-                    data.map(elements => {
-                        console.log(elements)
-                        return <HornedBeast titelAnimal={elements.title} img={elements.image_url} discription={elements.description}
-                        keyword ={elements.keyword}  horns={elements.horns} raiselikes={this.state.numlikes} />
-                    })
 
-                    // <HornedBeast raiselikes={this.state.numlikes}/>
-                        // console.log(this.state);
-
-                }
+                    }
+                      </Row>
+                </Container>
             </>
         )
-    } }
+    }
+}
 
-    export default Main
+export default Main
