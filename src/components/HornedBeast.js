@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
+import styles from './mystyle.module.css'; 
 
 
 class HornedBeast extends Component {
@@ -29,10 +30,12 @@ class HornedBeast extends Component {
 
         return (
             <>
+        
+        
             
             
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img onClick={this.raiselikes} variant="top" src= {this.props.image_url}
+                    <Card style={{ width: '18rem' , height :'48rem'   }} >
+                        <Card.Img  style={{ width: '18rem' , height :'28rem'   }} onClick={this.raiselikes} variant="top" src= {this.props.image_url}
                         alt={this.props.title} />
                         <Card.Body>
                             <Card.Title>{this.props.title}</Card.Title>
